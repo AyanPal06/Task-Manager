@@ -1,7 +1,7 @@
 # MERN Task Manager App
 
-## Setup (local MongoDB)
-1. Ensure MongoDB is installed and running locally (`mongod`).
+## Setup 
+1. Ensure MongoDB is installed and connected Properly.
 2. Backend:
    ```bash
    cd server
