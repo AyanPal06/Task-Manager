@@ -14,7 +14,7 @@ const app = express();
 // ✅ Setup CORS FIRST (before routes or parsers)
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://tasks-manager-application.netlify.app/'
+  'https://tasks-manager-application.netlify.app'
 ];
 
 app.use(
