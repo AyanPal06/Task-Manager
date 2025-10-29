@@ -3,7 +3,7 @@ import axios from 'axios';
 const api = axios.create({
   baseURL:
     process.env.NODE_ENV === 'production'
-      ? 'https://your-production-api.com' // ✅ change to your deployed backend URL
+      ? 'https://task-manager-2-o7y9.onrender.com' // ✅ change to your deployed backend URL
       : 'http://localhost:5000', // ✅ for local dev
   withCredentials: true, // important for refresh cookies
 });

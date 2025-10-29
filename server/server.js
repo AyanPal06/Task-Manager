@@ -12,14 +12,26 @@ const errorHandler = require('./middleware/errorHandler');
 const app = express();
 
 // ✅ Setup CORS FIRST (before routes or parsers)
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://tasks-manager-application.netlify.app/'
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
+
 
 // ✅ Middleware
 app.use(express.json());
